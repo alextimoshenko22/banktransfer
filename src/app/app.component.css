@@ -1,23 +1,35 @@
-div {
-    background-color: #f3f3f3;
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1976D2;
+    height: 56px;
+    min-height: 56px;
+    padding: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+    color: white;
 }
 
-.active-class {
-    color: red;
+header img {
+    width: 50px;
 }
 
-h1 {
-    text-align: center;
+header h1 {
+    font-weight: 400;
+    margin: 0 0 0 10px;
 }
 
-.tabs {
-    text-align: center;
+main {
+    width: 600px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
-.tabs a {
-    margin: 0 10px 0 0;
-}
-
-.tabs a:last-child {
-    margin: 0 0 0 0;
+todo-form,
+todo-list {
+    width: 100%;
 }

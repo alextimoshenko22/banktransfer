@@ -1,22 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { FormsModule } from '@angular/forms'
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { BankLayoutComponent } from './bank-layot/bank-layout.component';
+import { BankHistoryComponent } from './bank-history/bank-history.component';
+import { BankTransferComponent } from './bank-transfer/bank-transfer.component';
+import { AppRoutingModule } from './app-routing.module';
+// import { BankService } from './shared/bank.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    routingComponents
-  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    BankLayoutComponent,
+    BankTransferComponent,
+    BankHistoryComponent
+  ],
+  // providers: [BankService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
