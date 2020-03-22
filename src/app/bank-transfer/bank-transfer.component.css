@@ -1,0 +1,143 @@
+/* стили для формы */
+.cards {
+    clear: both;
+}
+
+fieldset {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 350px;
+    height: 200px;
+    margin: 50px;
+    display: inline-block;
+}
+
+.block {
+    display: inline-block;
+}
+
+input {
+    display: block;
+    background: white;
+    border: 1px solid #EBEBEB;
+    border-radius: 3px;
+    padding: 5px 5px;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+input.ng-touched.ng-invalid {
+    border: solid red 2px;
+}
+
+input.ng-touched.ng-valid {
+    border: solid green 2px;
+}
+
+select.ng-touched.ng-invalid {
+    border: solid red 2px;
+}
+
+select.ng-touched.ng-valid {
+    border: solid green 2px;
+}
+
+.card1 {
+    padding: 20px;
+    background-color: #90EE90;
+    float: left
+}
+
+p {
+    text-align: center;
+}
+
+.card1 label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.6em;
+    margin-bottom: 1px;
+    color: #92A3A6;
+}
+
+.fio {
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+select {
+    float: left;
+    width: 45px;
+    border: 1px solid #EBEBEB;
+    border-radius: 3px;
+    padding: 5px 2px;
+    margin-right: 5px;
+}
+
+input:focus,
+select:focus {
+    border-color: #20A8FF;
+}
+
+.card2 {
+    padding: 20px;
+    background-color: #40E0D0;
+}
+
+.card2 label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 1.6em;
+    margin-bottom: 1px;
+    color: #92A3A6;
+}
+
+.sum {
+    display: inline-block;
+    width: 120px;
+    margin-left: 325px;
+    border: 1px solid black;
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    height: 36px;
+    margin: 0px 50px;
+    min-width: 64px;
+    padding: 0 16px;
+    font-size: 1em;
+    text-transform: uppercase;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+button {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em cacl(.8em+3px);
+    border-radius: 3px;
+    background: rgb(64, 199, 129);
+    box-shadow: 0 -3px rgb(53, 167, 110) inset;
+    transition: 0.2s;
+}
+button:hover {
+    background: rgb(64, 199, 129);
+}
+
+button:active {
+    background: rgb(33, 147, 90);
+    box-shadow: 0 3px rgb(33, 147, 90) inset;
+}
+
+
+
+

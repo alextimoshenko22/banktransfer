@@ -1,68 +1,48 @@
-<form [formGroup]="p2pForm">
+<form class="cards" [formGroup]="myForm" (ngSubmit)="onSubmit(); form.reset()" #form="ngForm">
+
     <fieldset class="card1">
+
         <p>карта плательщика</p>
-        <div class="block" *ngIf="p2pForm?.controls?.cardNumber">
+
+        <div class="block" *ngIf="myForm?.controls?.cardNumber1">
             <label>номер</label>
-            <input name='cardNumber' formControlName='cardNumber'/>
-            <!-- <input type="text" id="ccn" maxlength="4" placeholder="0000"/>
-            <input type="text" id="ccn" maxlength="4" placeholder="0000"/>
-            <input type="text" id="ccn" maxlength="4" placeholder="0000"/> -->
+            <input name='cardNumber1' [(ngModel)]="num1" formControlName='cardNumber1' />
         </div>
-        <div class="block">
+
+        <div class="block" *ngIf="myForm?.controls?.fio">
             <label>ФИО держателя</label>
-            <input type="text" id="FIO" />
+            <input class="fio" pattern="[a-zA-Z ]*" name='fio' formControlName='fio' placeholder="Ivan Petrov" />
         </div>
+
         <div class="block">
             <label>активна до</label>
-            <select id="month">
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
+            <select class="month" formControlName='month' [(ngModel)]="month">
+                <option *ngFor="let m of arrayMonth" [value]="m">
+                    {{ m }}
+                </option>
             </select>
-            <select id="month">
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-                <option value="32">32</option>
-                <option value="33">33</option>
-                <option value="34">34</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
+            <select class="year" formControlName='year' [(ngModel)]="year">
+                <option *ngFor="let y of arrayYear" [value]="y">
+                    {{ y }}
+                </option>
             </select>
         </div>
     </fieldset>
+
     <fieldset class="card2">
+
         <p>карта получателя</p>
-        <div class="block">
+
+        <div class="block" *ngIf="myForm?.controls?.cardNumber2">
             <label>номер</label>
-            <input type="text" id="ccn" maxlength="4" placeholder="0000" />
-            <input type="text" id="ccn" maxlength="4" placeholder="0000" />
-            <input type="text" id="ccn" maxlength="4" placeholder="0000" />
-            <input type="text" id="ccn" maxlength="4" placeholder="0000" />
+            <input [(ngModel)]="num2" formControlName='cardNumber2' />
         </div>
+
     </fieldset>
+
+    <div class="actions" *ngIf="myForm?.controls?.sum">
+        <input class="sum" name="sum" [(ngModel)]="sum" formControlName='sum' maxlength="6" placeholder="СУММА" />
+        <button type="submit" [disabled]="myForm.invalid">ПЕРЕВЕСТИ</button>
+    </div>
+
 </form>
-<input type="text" id="sum" maxlength="9" placeholder="СУММА" />
-<button type="submit">ПЕРЕВЕСТИ</button>

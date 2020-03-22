@@ -1,35 +1,32 @@
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #1976D2;
-    height: 56px;
-    min-height: 56px;
-    padding: 0;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
-    color: white;
+h1 {
+    margin-left: 100px;
 }
 
-header img {
-    width: 50px;
+/* стили ссылок */
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    padding-bottom: .1em;
 }
 
-header h1 {
-    font-weight: 400;
-    margin: 0 0 0 10px;
+/* стили для раздела навигации */
+.active-link {
+    background-color: rgb(190, 224, 252);
+}
+.nav ul {
+    text-transform: uppercase;
+    list-style: none;
 }
 
-main {
-    width: 600px;
-    margin: auto;
-    padding: 2rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+.nav ul li {
+    font-weight: normal;
+    float: left;
 }
 
-todo-form,
-todo-list {
-    width: 100%;
+.nav ul li a {
+    display: block;
+    padding: 0.5em 2.5em;
+    border: 2px solid black;
+    margin: 10px;
+    color: black;
 }

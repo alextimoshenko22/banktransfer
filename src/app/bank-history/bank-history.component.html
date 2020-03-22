@@ -1,114 +1,7 @@
-<style type="text/css">
-    body {
-        font-family: Verdana, Geneva, sans-serif;
-        background-color: lavender;
-        margin: 0;
-        padding: 0;
-    }
+<div class="history">
 
-    /* заголовок */
-    h1 {
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        margin-left: 100px;
-        margin-top: 50px;
-    }
-
-    /* стили ссылок */
-    a {
-        text-decoration: none;
-        border-bottom: 1px dotted;
-        padding-bottom: .1em;
-    }
-
-    a:link {
-        color: #C00;
-    }
-
-    a:visited {
-        color: #921A66;
-    }
-
-    a:focus {
-        color: #921A66;
-    }
-
-    a:hover {
-        color: #921A66;
-    }
-
-    a:active {
-        color: #F00;
-    }
-
-    /* стили для раздела навигации */
-    .nav ul {
-        text-transform: uppercase;
-        list-style: none;
-    }
-
-    .nav ul li {
-        font-weight: normal;
-        float: left;
-    }
-
-    .nav ul li a {
-        display: block;
-        padding: 0.5em 2.5em;
-        border: 2px solid black;
-        margin: 10px;
-    }
-
-    .nav ul a:link {
-        color: black;
-    }
-
-    .nav ul a:visited {
-        color: black;
-    }
-
-    .nav ul a:focus {
-        border-color: #fff;
-    }
-
-    .nav ul a:hover {
-        border-color: #fff;
-    }
-
-    .nav ul a:active {
-        color: #F00;
-    }
-
-    #transfer {
-        margin-left: 160px;
-    }
-
-    /* стили для формы */
-    form {
-        clear: both;
-    }
-
-    table {
-        margin: 0 40px;
-        border: 2px solid black;
-        border-collapse: collapse;
-        border-spacing: 10px 20px;
-    }
-
-    th,
-    td {
-        border: 2px solid black;
-        text-align: center;
-        font-weight: normal;
-        padding: 12px;
-    }
-
-    tr:hover td {
-        background: #CCDDFF;
-    }
-</style>
-<form>
     <table>
+
         <tr>
             <th>№</th>
             <th>Карта плательщика</th>
@@ -117,16 +10,19 @@
             <th>Дата выполнения</th>
             <th>Действие</th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>1233 **** **** 3343</td>
-            <td>5433 **** **** 1234</td>
-            <td>1200</td>
-            <td>01.11.2017</td>
+
+        <tr *ngFor="let transfer of transfers; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ transfer.num1 }}</td>
+            <td>{{ transfer.num2 }}</td>
+            <td>{{ transfer.sum | number: '1.0-2' }}</td>
+            <td>{{ transfer.date | date: 'dd.MM.yyyy' }}</td>
             <td>
-                <button type="submit" class="repeat">повторить</button>
-                <button class="delete">удалить</button>
+                <button class="repeat" (click)="repeat(transfer)">повторить</button>
+                <button class="delete" (click)="delete(transfer)">удалить</button>
             </td>
         </tr>
+
     </table>
-</form>
+
+</div>
