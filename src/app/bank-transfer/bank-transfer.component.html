@@ -1,4 +1,4 @@
-<form class="cards" [formGroup]="myForm" (ngSubmit)="onSubmit(); form.reset()" #form="ngForm">
+<form class="cards" [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
     <fieldset class="card1">
 
@@ -6,22 +6,22 @@
 
         <div class="block" *ngIf="myForm?.controls?.cardNumber1">
             <label>номер</label>
-            <input name='cardNumber1' [(ngModel)]="num1" formControlName='cardNumber1' />
+            <input formControlName='cardNumber1' placeholder="0000 0000 0000 0000" />
         </div>
 
         <div class="block" *ngIf="myForm?.controls?.fio">
             <label>ФИО держателя</label>
-            <input class="fio" pattern="[a-zA-Z ]*" name='fio' formControlName='fio' placeholder="Ivan Petrov" />
+            <input class="fio" pattern="[a-zA-Z ]*" formControlName='fio' placeholder="Alex Timoshenko" />
         </div>
 
         <div class="block">
             <label>активна до</label>
-            <select class="month" formControlName='month' [(ngModel)]="month">
+            <select class="month" formControlName='month'>
                 <option *ngFor="let m of arrayMonth" [value]="m">
                     {{ m }}
                 </option>
             </select>
-            <select class="year" formControlName='year' [(ngModel)]="year">
+            <select class="year" formControlName='year'>
                 <option *ngFor="let y of arrayYear" [value]="y">
                     {{ y }}
                 </option>
@@ -35,13 +35,13 @@
 
         <div class="block" *ngIf="myForm?.controls?.cardNumber2">
             <label>номер</label>
-            <input [(ngModel)]="num2" formControlName='cardNumber2' />
+            <input formControlName='cardNumber2' placeholder="0000 0000 0000 0000" />
         </div>
 
     </fieldset>
 
     <div class="actions" *ngIf="myForm?.controls?.sum">
-        <input class="sum" name="sum" [(ngModel)]="sum" formControlName='sum' maxlength="6" placeholder="СУММА" />
+        <input class="sum" formControlName='sum' maxlength="6" placeholder="СУММА" />
         <button type="submit" [disabled]="myForm.invalid">ПЕРЕВЕСТИ</button>
     </div>
 

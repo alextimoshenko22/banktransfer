@@ -50,6 +50,7 @@ select.ng-touched.ng-valid {
 
 p {
     text-align: center;
+    color: black;
 }
 
 .card1 label {
@@ -138,6 +139,18 @@ button:active {
     box-shadow: 0 3px rgb(33, 147, 90) inset;
 }
 
+button[disabled] {
+    color: rgb(202, 202, 202);
+}
 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
 
+input:focus::-moz-placeholder {
+    color: transparent;
+}
 
+input:focus::-ms-input-placeholder {
+    color: transparent;
+}

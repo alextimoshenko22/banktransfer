@@ -8,6 +8,7 @@ table {
     border: 2px solid black;
     border-collapse: collapse;
     border-spacing: 10px 20px;
+    color: black;
 }
 
 th,
@@ -20,4 +21,8 @@ td {
 
 tr:hover td {
     background: #CCDDFF;
+}
+
+th {
+    font-weight: bold;
 }
